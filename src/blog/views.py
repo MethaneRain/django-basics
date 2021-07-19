@@ -23,4 +23,10 @@ def about_view(request,*args, **kwargs):
     #return HttpResponse("<h2>oh yes. Here's something about me!</h2><br><a href='https://apod.nasa.gov/apod/astropix.html' target='_blank'>Family friendly site</a>")
 
 def contact_view(request,*args, **kwargs):
-    return HttpResponse("<h2>oh yes</h2><a href='https://github.com/MethaneRain' target='_blank'>Here's how to contact me:</a><br><br><br><br><br><br><br><br>----------------------------------<br><br><br><img src='https://www.placecage.com/gif/200/300'>")
+    my_context = {"my_email": "lookout@headsup.edu",
+    "my_address": [321,"Burgerville","ST"],
+    "my_dict": {"github":"www.html.gov","docker":"www.docker.gov","linkedin":"linkedin.wwww.gov.chowda","twitter":"garbage@timewasting.ca"},
+    "my_html": "<h1>Why would I look up when I can see straight?</h1>",
+    }
+    return render(request, "contact.html", my_context)
+    #return HttpResponse("<h2>oh yes</h2><a href='https://github.com/MethaneRain' target='_blank'>Here's how to contact me:</a><br><br><br><br><br><br><br><br>----------------------------------<br><br><br><img src='https://www.placecage.com/gif/200/300'>")

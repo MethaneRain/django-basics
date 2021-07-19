@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Something about me? </h1>
+    User logged in: {{request.user}}
+    <p style="font-size: 12pt; font-family: 'Lucida Console', Courier, monospace; font-style: oblique 40deg;">
+      Title: {{ object.title }}
+    </p>
+
+    <p style="font-size: 12pt; font-family: 'Lucida Console', Courier, monospace; font-style: oblique 40deg;">
+      Price: ${{ object.price }}
+    </p>
+
+    <p style="font-size: 12pt; font-family: 'Lucida Console', Courier, monospace; font-style: oblique 40deg;">
+      Summary: {{ object.summary }}
+    </p>
+
+{% endblock %}

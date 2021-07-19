@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Something about me? </h1>
+    <p style="font-size: 12pt; font-family: 'Lucida Console', Courier, monospace; font-style: oblique 40deg;">
+      Where to start
+    </p>
+
+    User logged in: {{ request.user}}
+    <p>
+    <strong>{{ my_address }}</strong> --> {{ my_email }}
+
+
+    <ul>
+    {% for i in my_address %}
+        <li>{{ i }}</li>
+    {% endfor %}
+    </ul>
+    This text will be raw HTML, and will appear with uppercase.<br>
+    {% filter force_escape|lower %}
+    This text will be HTML-escaped, and will appear in all lowercase.
+    {% endfilter %}
+
+    <br><br>
+    {% for key, value in my_dict.items %}
+    {{ key }}: {{ value }}<br>
+    {% endfor %}
+
+    <br><br>
+    Raw HTML text:<br>
+    {{ my_html }}
+    <br><br>
+    Rendered HTML text:
+    {{ my_html|safe }}
+    </p>
+
+    <h2>GitHub</h2>
+    <a href='https://github.com/MethaneRain' target='_blank'>Here's how to see some projects/tinkering:</a>
+    <br><br>
+    ------------------------------------------------------------------------------------------------------
+    <br><br>
+    <img src='https://www.placecage.com/c/200/300'>
+
+{% endblock %}
+
+{% block scary_content %}
+{% endblock %}
