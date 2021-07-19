@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Hello World!</h1>
+    User logged in: {{ request.user}}
+    <p>
+    {{ my_text }} <strong>{{ my_number }}</strong> times
+
+    {{ my_list }}
+    <ul>
+    {% for i in my_list %}
+        <li>{{ i|add:10000 }}</li>
+    {% endfor %}
+    </ul>
+    This text will be raw HTML, and will appear with uppercase.<br>
+    {% filter force_escape|lower %}
+    This text will be HTML-escaped, and will appear in all lowercase.
+    {% endfilter %}
+
+    <br><br>
+    {% for key, value in my_dict.items %}
+    {{ key }}: {{ value }}<br>
+    {% endfor %}
+
+    <br><br>
+    Raw HTML text:<br>
+    {{ my_html }}
+    <br><br>
+    Rendered HTML text:
+    {{ my_html|safe }}
+    </p>
+{% endblock %}
