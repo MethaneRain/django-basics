@@ -1,0 +1,2 @@
+every django project has a specific secret key!
+Live production - you need to turn DEBUG to FALSE!
