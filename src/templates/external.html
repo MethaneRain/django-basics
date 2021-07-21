@@ -2,8 +2,14 @@
 
 {% block content %}
 <br><br><br><br><br><br><br><br><br><br>
+
+    <form action="./" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Execute Python Script">
+    <!--{{ test_phrase }}-->
+    </form>
 <!--{{ test_phrase }}-->
-{{ test_cos }}
+
 <br><br>
 <p>
 <!--{{ file_content }}-->
