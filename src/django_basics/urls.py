@@ -17,7 +17,8 @@ from blog.views import homepage_view, about_view, contact_view
 from django.contrib import admin
 from django.urls import path
 
-from products.views import product_detail_view
+from products.views import product_detail_view, product_create_view#,product_py_test_view
+from products.views import button,output,external,read_file,numpy_test
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +26,12 @@ urlpatterns = [
     path("home/",homepage_view,name="home"),
     path("about/",about_view,name="about"),
     path("contact/",contact_view,name="contact"),
-    path("product/",product_detail_view,name="about"),
+    path("product/",product_detail_view,name="product"),
+    #path("create/",product_create_view),
+    #path("create2/",product_py_test_view),
+    #path("external/",external),
+    path("external/",numpy_test),
+    #path("external/",read_file),
+    path('button', button),
+    path('output', output,name="script"),
 ]
