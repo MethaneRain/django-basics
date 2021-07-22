@@ -1,13 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<<<<<<< Updated upstream
 <br><br><br><br><br><br><br><br><br><br>
 <!--{{ test_phrase }}-->
 {{ test_cos }}
+=======
+{% load  static %}
+<aside id="featured" class="body"><article>
+  <figure>
+    <img src="{% static 'images/fire_wx_2021_07_22.png' %}" alt="WX" />
+  </figure>
+  <hgroup>
+
+
+    <form action="./" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Go back home...">
+    <!--{{ test_phrase }}-->
+    </form>
+
+
+>>>>>>> Stashed changes
 <br><br>
 <p>
-<!--{{ file_content }}-->
+Read contents of external text file: <br>{{ file_content }}
 </p>
+</article></aside><!-- /#featured -->
 {% endblock %}
 
 {% block scary_content %}
