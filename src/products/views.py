@@ -58,16 +58,16 @@ def read_file(request):
     return render(request, "external.html", context)
 
 
-def numpy_test(request):
+def py_tests(request):
     return render(request,'external.html',{'test_cos':testies})
 def testies():
     import numpy as np
     import cartopy.crs as ccrs
-    print("wow, cartopy is installed. Let's make some maps")
+    #print("wow, cartopy is installed. Let's make some maps")
     var = np.cos(0.76)
     var2 = "wow, cartopy is installed. Let's make some maps"
     #print(var)
-    return var,var2
+    return var2
 
 
 def product_create_view(request):

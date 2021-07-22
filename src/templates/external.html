@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<<<<<<< Updated upstream
 <br><br><br><br><br><br><br><br><br><br>
+
+    <form action="./" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Execute Python Script">
+    <!--{{ test_phrase }}-->
+    </form>
 <!--{{ test_phrase }}-->
 {{ test_cos }}
 =======
@@ -21,7 +26,10 @@
     </form>
 
 
->>>>>>> Stashed changes
+
+=======
+
+
 <br><br>
 <p>
 Read contents of external text file: <br>{{ file_content }}
