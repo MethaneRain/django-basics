@@ -1,6 +1,11 @@
+
 {% extends 'base.html' %}
 
+
+
+
 {% block content %}
+<<<<<<< Updated upstream
     <h1>Hello World!</h1>
     User logged in: {{ request.user}}
     <p>
@@ -54,3 +59,113 @@
 
     {% block scary_content %}
     {% endblock %}
+=======
+<aside id="featured" class="body"><article>
+  <figure>
+{% load  static %}
+    <img src="{% static 'images/2021_03_14_1801_true_color.svg' %}" alt="GOES True Color" width="292px" height="179px"/>
+  </figure>
+  <hgroup>
+
+    <h2>Featured Article</h2>
+
+User logged in: {{ request.user}}
+<p>
+{{ my_text }} <strong>{{ my_number }}</strong> times
+</p>
+<p>
+my list: {{ my_list }}
+</p>
+<ul><p>Iterate over my_list:</p>
+{% for i in my_list %}
+    <li>10,000 plus list item {{ i }}: {{ i|add:10000 }}</li>
+{% endfor %}
+</ul>
+This text will be raw HTML, and will appear with some uppercase.<br>
+{% filter force_escape|lower %}
+This text will be HTML-escaped, and will appear in all lowercase.
+{% endfilter %}
+
+<br><br>
+{% for key, value in my_dict.items %}
+{{ key }}: {{ value }}<br>
+{% endfor %}
+
+<br><br>
+Raw HTML text:<br>
+{{ my_html }}
+<br><br>
+Rendered HTML text:
+{{ my_html|safe }}
+
+{{ my_btn }}
+
+<!--
+<button onclick="location.href='{% url 'script' %}'">Execute Script</button> <hr>
+{% if data %}
+{{data | safe}}
+{% endif %}
+-->
+
+<form action="/external/" method="post">
+{% csrf_token %}
+Input Text:
+<input type="text" name="param" required><br><br>
+<!--{{ data }}-->
+</form>
+</hgroup>
+<p>Discover how to use Graceful Degradation and Progressive Enhancement techniques to achieve an outstanding, cross-browser <a href="http://dev.w3.org/html5/spec/Overview.html" rel="external">HTML5</a> and <a href="http://www.w3.org/TR/css3-roadmap/" rel="external">CSS3</a> website today!</p>
+
+</article></aside><!-- /#featured -->
+
+
+
+
+<section id="content" class="body">
+  <ol id="posts-list" class="hfeed">
+    <li><article class="hentry">
+      <header>
+        <h2 class="entry-title"><a href="https://www.spc.noaa.gov/cgi-bin-spc/getacrange.pl?date0=20210721&date1=20210721" target="_blank" rel="bookmark" title="Permalink to this POST TITLE">Today's Outlook</a></h2>
+
+      </header>
+
+      <footer class="post-info">
+        <abbr class="published" title="2021-07-22T06:07:00-07:00"><!-- YYYYMMDDThh:mm:ss+ZZZZ -->
+          22th July 2021
+        </abbr>
+
+        <address class="vcard author">
+
+          By <a class="url fn" href="#">Forecaster #4</a>
+        </address>
+      </footer><!-- /.post-info -->
+
+      <div class="entry-content">
+
+        <p>
+          Looks like the West is still in rather dire straits. These heat waves
+          are something really spectacular, in a bad way... Current conditions below:
+
+          <form action="{% url 'external' %}" method="post">
+          {% csrf_token %}
+
+           <button type="submit" name='mybtn2' value={{read_file}}>Continue</button>
+           </form>
+
+        </p>
+
+      </div><!-- /.entry-content -->
+    </article></li>
+
+    <li><article class="hentry">
+      ...
+    </article></li>
+
+    <li><article class="hentry">
+      ...
+    </article></li>
+
+  </ol><!-- /#posts-list -->
+</section><!-- /#content -->
+{% endblock %}
+>>>>>>> Stashed changes
