@@ -13,10 +13,16 @@ def homepage_view(request,*args, **kwargs):
     "my_list": [123,432,634],
     "my_dict": {"cat":"EF5","wndmax":162,"KI":-12.4,"county":"BOU"},
     "my_html": "<h1>Tornado Malaise</h1>",
+    "my_btn":read_file()
     }
     return render(request, "home.html", my_context)
     #return HttpResponse("<h2>oh yes</h2><ul><li><a href='http://127.0.0.1:8000/about/'>About</a></li><li><a href='http://127.0.0.1:8000/contact/'>Contact</a></li></ul>")
 
+def read_file():
+    f = open('products/test_text.txt', 'r')
+    file_content = f.read()
+    f.close()
+    return file_content
 
 def about_view(request,*args, **kwargs):
     return render(request, "about.html", {})
