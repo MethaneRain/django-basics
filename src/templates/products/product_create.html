@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<br><br><br><br><br><br>
+<aside id="featured" class="body"><article>
+  <figure>
+    {% load  static %}
+    <img src="{% static 'images/fire_wx_2021_07_22.png' %}" alt="WX" />
+  </figure>
+  <hgroup>
 <form method="POST"> {% csrf_token %}
 {{ form.as_p }}
 <input type="submit" value="Save"/></form>
+</article></aside><!-- /#featured -->
 {% endblock %}
