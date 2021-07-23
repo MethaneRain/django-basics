@@ -19,11 +19,9 @@ from django.urls import path
 
 from products.views import product_detail_view, product_create_view#,product_py_test_view
 
-from products.views import button,output,external,read_file,numpy_test
 
 from products.views import button,output,external,py_tests,read_file
 
-from products.views import button,output,external,read_file,py_tests
 
 
 urlpatterns = [
@@ -38,7 +36,7 @@ urlpatterns = [
 
     #path("external/",external),
 
-    path("external/",numpy_test),
+    #path("external/",numpy_test),
 
     path("external/",external),
     #path("external/",py_tests),
